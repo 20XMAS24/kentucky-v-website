@@ -509,6 +509,10 @@ h3 {
   background: #22c55e;
   box-shadow: 0 0 20px rgba(34, 197, 94, 0.8);
 }
+.server-status.offline {
+  background: #c52222;
+  box-shadow: 0 0 20px rgba(197, 34, 34, 0.8);
+}
 
 .server-name {
   font-size: clamp(18px, 2.5vw, 24px);
