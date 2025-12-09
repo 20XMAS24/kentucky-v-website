@@ -218,10 +218,10 @@ h3 {
 }
 
 .logo-image {
-  max-width: clamp(100px, 15vw, 200px);
+  max-width: clamp(100px, 15vw, 150px);
   width: 100%;
   height: auto;
-  filter: drop-shadow(0 8px 32px rgba(230, 57, 70, 0.4));
+  filter: drop-shadow(0 8px 32px rgba(255, 0, 21, 0.4));
   margin: 0 auto;
 }
 
