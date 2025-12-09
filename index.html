@@ -12,14 +12,14 @@
     <nav class="navbar">
         <div class="container">
             <div class="logo">
-                <img src="assets/logo.png" alt="Kentucky V Logo" class="logo-image">
+                <span class="logo-text">Kentucky V</span>
             </div>
             <ul class="nav-links">
                 <li><a href="#home">Главная</a></li>
                 <li><a href="#roleplay">Role Play</a></li>
                 <li><a href="#servers">Сервера</a></li>
+                <li><a href="#donate">Донат</a></li>
                 <li><a href="#start">Как начать</a></li>
-                <li><a href="#streamers">Новости</a></li>
                 <li><a href="#faq">FAQ</a></li>
             </ul>
             <button class="btn btn-primary btn-nav" onclick="window.location.href='#start'">Играть</button>
@@ -31,7 +31,7 @@
         <div class="hero-overlay"></div>
         <div class="hero-content">
             <div class="hero-logo">
-                <!-- <img src="assets/logo.png" alt="Kentucky V Logo" class="logo-image"> -->
+                <img src="assets/logo.png" alt="Kentucky V Logo" class="logo-image">
             </div>
             <h1>KENTUCKY V</h1>
             <p class="subtitle">ROLE PLAY</p>
@@ -104,37 +104,37 @@
                         <h3 class="server-name">Kentucky V - Server #1</h3>
                         <p class="server-ip">play1.kentuckyv.com</p>
                         <div class="server-stats">
-                            <span class="stat">4536 / 5030 игроков</span>
+                            <span class="stat">456 / 500 игроков</span>
                             <span class="stat">32ms</span>
                         </div>
                     </div>
                     <button class="btn btn-small btn-copy">Скопировать IP</button>
                 </div>
                 
-                <div class="server-card" >
-                    <div class="server-status offline"></div>
+                <div class="server-card" onclick="copyIP('play2.kentuckyv.com')">
+                    <div class="server-status online"></div>
                     <div class="server-info">
                         <h3 class="server-name">Kentucky V - Server #2</h3>
-                        <p class="server-ip">Soon...</p>
-                        <!-- <div class="server-stats">
+                        <p class="server-ip">play2.kentuckyv.com</p>
+                        <div class="server-stats">
                             <span class="stat">391 / 500 игроков</span>
                             <span class="stat">28ms</span>
-                        </div> -->
+                        </div>
                     </div>
-                    <!-- <button class="btn btn-small btn-copy">Скопировать IP</button> -->
+                    <button class="btn btn-small btn-copy">Скопировать IP</button>
                 </div>
                 
-                <div class="server-card" >
-                    <div class="server-status offline"></div>
+                <div class="server-card" onclick="copyIP('play3.kentuckyv.com')">
+                    <div class="server-status online"></div>
                     <div class="server-info">
                         <h3 class="server-name">Kentucky V - Server #3</h3>
-                        <p class="server-ip">Soon...</p>
-                        <!-- <div class="server-stats">
+                        <p class="server-ip">play3.kentuckyv.com</p>
+                        <div class="server-stats">
                             <span class="stat">400 / 500 игроков</span>
                             <span class="stat">35ms</span>
-                        </div> -->
+                        </div>
                     </div>
-                    <!-- <button class="btn btn-small btn-copy">Скопировать IP</button> -->
+                    <button class="btn btn-small btn-copy">Скопировать IP</button>
                 </div>
             </div>
         </div>
@@ -151,7 +151,7 @@
             
             <!-- Characters Image -->
             <div class="features-hero">
-                <!-- <img src="assets/personal.png" alt="Персонажи Kentucky V" class="features-image"> -->
+                <img src="assets/personal.jpg" alt="Персонажи Kentucky V" class="features-image">
             </div>
             
             <div class="features-grid">
@@ -194,6 +194,78 @@
         </div>
     </section>
 
+    <!-- Donation Section -->
+    <section id="donate" class="donation-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Support Us</span>
+                <h2>Поддержи <span class="highlight">проект</span></h2>
+                <p class="section-subtitle">Получи эксклюзивные возможности и помоги развитию сервера!</p>
+            </div>
+            
+            <div class="pricing-grid">
+                <!-- Starter Plan -->
+                <div class="pricing-card">
+                    <div class="plan-badge">Стартовый</div>
+                    <h3 class="plan-name">Starter</h3>
+                    <div class="plan-price">
+                        <span class="price-amount">199</span>
+                        <span class="price-currency">₽</span>
+                    </div>
+                    <ul class="plan-features">
+                        <li>✅ 50,000 внутриигровой валюты</li>
+                        <li>✅ Цветной ник в чате</li>
+                        <li>✅ Доступ к VIP лобби</li>
+                        <li>✅ Приоритет в очереди</li>
+                    </ul>
+                    <button class="btn btn-primary btn-donate" onclick="donate(199)">Купить</button>
+                </div>
+                
+                <!-- Premium Plan -->
+                <div class="pricing-card featured">
+                    <div class="plan-badge popular">Популярное</div>
+                    <h3 class="plan-name">Premium</h3>
+                    <div class="plan-price">
+                        <span class="price-amount">499</span>
+                        <span class="price-currency">₽</span>
+                    </div>
+                    <ul class="plan-features">
+                        <li>✨ 150,000 внутриигровой валюты</li>
+                        <li>✨ Уникальный цветной ник</li>
+                        <li>✨ Эксклюзивный транспорт</li>
+                        <li>✨ VIP лобби + приоритет</li>
+                        <li>✨ Доступ к закрытым евентам</li>
+                    </ul>
+                    <button class="btn btn-primary btn-donate" onclick="donate(499)">Купить</button>
+                </div>
+                
+                <!-- Ultimate Plan -->
+                <div class="pricing-card">
+                    <div class="plan-badge">Максимум</div>
+                    <h3 class="plan-name">Ultimate</h3>
+                    <div class="plan-price">
+                        <span class="price-amount">999</span>
+                        <span class="price-currency">₽</span>
+                    </div>
+                    <ul class="plan-features">
+                        <li>👑 350,000 внутриигровой валюты</li>
+                        <li>👑 Анимированный ник</li>
+                        <li>👑 Любой транспорт на выбор</li>
+                        <li>👑 Личное VIP-пространство</li>
+                        <li>👑 Все привилегии Premium</li>
+                        <li>👑 Доступ к бета-тестированию</li>
+                    </ul>
+                    <button class="btn btn-primary btn-donate" onclick="donate(999)">Купить</button>
+                </div>
+            </div>
+            
+            <div class="donation-note">
+                <p>🔒 Безопасная оплата через <strong>YooMoney</strong> (Яндекс.Деньги)</p>
+                <p>🚀 Покупки зачисляются на аккаунт мгновенно!</p>
+            </div>
+        </div>
+    </section>
+
     <!-- Getting Started Section -->
     <section id="start" class="getting-started">
         <div class="container">
@@ -219,10 +291,10 @@
                 <div class="step-card">
                     <div class="step-number">2</div>
                     <div class="step-content">
-                        <h3>Скачай RAGE MULTIPLAYER</h3>
-                        <p>Самый быстрый способ начать играть!</p>
+                        <h3>Скачай Kentucky Launcher</h3>
+                        <p>Самый быстрый способ начать играть. Лаунчер безопасен и исправляет ошибки игры</p>
                         <button class="btn btn-primary btn-download">
-                            <span class="download-icon">↓</span> Скачать 
+                            <span class="download-icon">↓</span> Скачать лаунчер
                         </button>
                     </div>
                 </div>
@@ -245,26 +317,27 @@
     <section id="streamers" class="streamers-section">
         <div class="container">
             <div class="section-header">
-                <span class="section-label">Следите за новостями</span>
-                <h2>Играй и <span class="highlight">следи</span></h2>
+                <span class="section-label">Live Streams</span>
+                <h2>Играй и <span class="highlight">смотри</span></h2>
                 <p class="section-subtitle">
-                    Узнавай первым об акциях и новостях проекта!
+                    Смотри, поддерживай и участвуй в стримах самых популярных стримеров, которые играют на наших серверах.
+                    Играй вместе с любимыми блогерами и стримерами в Kentucky V!
                 </p>
             </div>
             
             <div class="streamers-grid">
                 <div class="streamer-card">
                     <div class="streamer-preview">
-                        <span class="live-badge"></span>
-                        <div class="preview-placeholder"></div>
+                        <span class="live-badge">LIVE</span>
+                        <div class="preview-placeholder">STREAM PREVIEW</div>
                     </div>
                     <div class="streamer-info">
-                        <h4 class="streamer-name">Kentucky V</h4>
-                        <p class="streamer-viewers"></p>
+                        <h4 class="streamer-name">Streamer Name</h4>
+                        <p class="streamer-viewers">1,234 зрителей</p>
                     </div>
                 </div>
                 
-                <!-- <div class="streamer-card">
+                <div class="streamer-card">
                     <div class="streamer-preview">
                         <span class="live-badge">LIVE</span>
                         <div class="preview-placeholder">STREAM PREVIEW</div>
@@ -284,7 +357,7 @@
                         <h4 class="streamer-name">Streamer Name</h4>
                         <p class="streamer-viewers">567 зрителей</p>
                     </div>
-                </div> -->
+                </div>
             </div>
             
             <div class="streamers-cta">
@@ -366,7 +439,7 @@
     </section>
 
     <!-- Newsletter Section -->
-    <!-- <section class="newsletter">
+    <section class="newsletter">
         <div class="container">
             <h2>Следите за новостями</h2>
             <p>Узнавай первым об акциях и новостях проекта</p>
@@ -375,7 +448,7 @@
                 <button type="submit" class="btn btn-primary">Подписаться</button>
             </form>
         </div>
-    </section> -->
+    </section>
 
     <!-- Footer -->
     <footer class="footer">
@@ -392,6 +465,7 @@
                         <li><a href="#home">Главная</a></li>
                         <li><a href="#roleplay">RolePlay</a></li>
                         <li><a href="#servers">Сервера</a></li>
+                        <li><a href="#donate">Донат</a></li>
                         <li><a href="#faq">FAQ</a></li>
                     </ul>
                 </div>
