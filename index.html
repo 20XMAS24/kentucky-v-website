@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kentucky V - GTA 5 RolePlay</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <span class="logo-text">Kentucky V</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Главная</a></li>
+                <li><a href="#about">О проекте</a></li>
+                <li><a href="#start">Начать</a></li>
+                <li><a href="#faq">FAQ</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="hero-logo">
+                <img src="assets/logo.png" alt="Kentucky V Logo" class="logo-image">
+            </div>
+            <h1>Kentucky V</h1>
+            <p class="subtitle">Создай свою историю в виртуальном мире</p>
+            <div class="hero-buttons">
+                <button class="btn btn-primary" onclick="document.getElementById('start').scrollIntoView({ behavior: 'smooth' })">Играть</button>
+                <button class="btn btn-secondary" onclick="document.getElementById('faq').scrollIntoView({ behavior: 'smooth' })">Подробнее</button>
+            </div>
+        </div>
+        <div class="hero-background">
+            <svg class="wave" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M0,50 Q300,0 600,50 T1200,50 L1200,120 L0,120 Z" fill="#ff4444" opacity="0.3"></path>
+                <path d="M0,60 Q300,20 600,60 T1200,60 L1200,120 L0,120 Z" fill="#ff4444" opacity="0.5"></path>
+                <path d="M0,70 Q300,40 600,70 T1200,70 L1200,120 L0,120 Z" fill="#ff4444" opacity="0.7"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2>О Kentucky V</h2>
+            <p class="about-text">
+                Kentucky V — это уникальная возможность погрузиться в виртуальную вселенную и играть выбранной ролью, соблюдая правила, аналогичные реальной жизни.
+            </p>
+            <div class="features">
+                <div class="feature">
+                    <div class="feature-icon">👔</div>
+                    <h3>Разнообразные профессии</h3>
+                    <p>Станьте политиком, бандитом, бизнесменом, таксистом или полицейским</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🌍</div>
+                    <h3>Виртуальный мир</h3>
+                    <p>Огромный мир, полный возможностей и приключений</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">👥</div>
+                    <h3>Мультиплеер</h3>
+                    <p>Взаимодействуйте с другими игроками в реальном времени</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🎮</div>
+                    <h3>События и ивенты</h3>
+                    <p>Регулярные обновления и сезонные события</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Getting Started Section -->
+    <section id="start" class="getting-started">
+        <div class="container">
+            <h2>Как начать играть?</h2>
+            <p class="section-subtitle">Всего два простых шага и ты готов к игре!</p>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Купи Grand Theft Auto V Legacy</h3>
+                    <p>Если у вас еще нет лицензионной версии игры, приобретите её в официальном магазине</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Скачай Kentucky Launcher</h3>
+                    <p>Самый быстрый способ начать играть. Лаунчер безопасен и исправляет ошибки игры</p>
+                </div>
+            </div>
+            <button class="btn btn-primary btn-large">Скачать Лаунчер</button>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="faq">
+        <div class="container">
+            <h2>Часто задаваемые вопросы</h2>
+            <div class="faq-items">
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <h3>Что такое Kentucky V?</h3>
+                        <span class="toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Это уникальный проект на базе GTA V, позволяющий тысячам игроков взаимодействовать друг с другом в реальном времени. Вы создаёте персонажа и живёте его жизнью в виртуальном мире.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <h3>Что такое Role Play?</h3>
+                        <span class="toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Это игровой режим, где участники создают персонажей и сценарии, а затем действуют согласно своим ролям в рамках игровых процессов. Вы полностью контролируете развитие истории вашего персонажа.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <h3>Как начать играть на Kentucky V?</h3>
+                        <span class="toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Для начала необходимо скачать лицензионную GTA V Legacy и установить Kentucky Launcher. После этого вы сможете подключиться к серверам.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <h3>Что такое Kentucky Launcher?</h3>
+                        <span class="toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Это приложение для подключения к серверам Kentucky V. Лаунчер безопасен, умеет исправлять ошибки игры и загружать необходимые файлы автоматически.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <h3>Чем заняться на сервере?</h3>
+                        <span class="toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Помимо большого выбора профессий и взаимодействия с игроками, у нас доступны регулярные обновления и сезонные ивенты. Вы можете заработать деньги, завести бизнес, участвовать в событиях.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <h3>Где найти правила серверов?</h3>
+                        <span class="toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Раздел с правилами серверов, жалобами на игроков и другими темами можно найти на форуме проекта. Рекомендуем внимательно ознакомиться с правилами перед началом игры.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter">
+        <div class="container">
+            <h2>Двигайся с нами</h2>
+            <p>Узнавай первым об акциях и новостях</p>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Введите ваш email" required>
+                <button type="submit" class="btn btn-primary">Подписаться</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Kentucky V. Все права защищены.</p>
+            <div class="footer-links">
+                <a href="#">Условия использования</a>
+                <a href="#">Политика конфиденциальности</a>
+                <a href="#">Контакты</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
