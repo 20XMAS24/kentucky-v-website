@@ -509,10 +509,6 @@ h3 {
   background: #22c55e;
   box-shadow: 0 0 20px rgba(34, 197, 94, 0.8);
 }
-.server-status.offline {
-  background: #c52222;
-  box-shadow: 0 0 20px rgba(197, 34, 34, 0.8);
-}
 
 .server-name {
   font-size: clamp(18px, 2.5vw, 24px);
@@ -563,6 +559,34 @@ h3 {
   background: var(--bg-secondary);
 }
 
+/* Features Hero Image */
+.features-hero {
+  margin-bottom: clamp(50px, 8vh, 80px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.features-image {
+  width: 100%;
+  max-width: 900px;
+  height: auto;
+  border-radius: 16px;
+  border: 3px solid var(--border-color);
+  box-shadow: var(--shadow-card);
+  transition: var(--transition);
+  background: linear-gradient(180deg, rgba(230, 57, 70, 0.1) 0%, transparent 100%);
+  padding: 20px;
+  object-fit: contain;
+}
+
+.features-image:hover {
+  border-color: var(--primary-color);
+  transform: translateY(-8px);
+  box-shadow: 0 16px 48px rgba(230, 57, 70, 0.4);
+}
+
 .features-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
@@ -587,7 +611,6 @@ h3 {
 .feature-icon {
   font-size: clamp(36px, 5vw, 48px);
   margin-bottom: clamp(15px, 2.5vh, 25px);
-  color: var(--primary-color);
   font-weight: 700;
 }
 
