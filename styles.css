@@ -667,18 +667,21 @@ h3 {
 .pricing-card:hover::before { transform: scaleX(1); }
 .pricing-card:hover {
   border-color: var(--primary-color);
-  transform: translateY(-8px) scale(1.02);
+  transform: translateY(-8px);
   box-shadow: var(--shadow-glow);
 }
 
 .pricing-card.featured {
   border-color: var(--primary-color);
   border-width: 4px;
-  transform: scale(1.05);
 }
 
 .pricing-card.featured::before {
   transform: scaleX(1);
+}
+
+.pricing-card.featured:hover {
+  transform: translateY(-8px);
 }
 
 .plan-badge {
