@@ -218,7 +218,7 @@ h3 {
 }
 
 .logo-image {
-  max-width: clamp(100px, 15vw, 200px);
+  max-width: clamp(100px, 15vw, 150px);
   width: 100%;
   height: auto;
   filter: drop-shadow(0 8px 32px rgba(230, 57, 70, 0.4));
@@ -767,7 +767,8 @@ h3 {
 .streamer-preview {
   position: relative;
   height: clamp(160px, 25vh, 220px);
-  background: linear-gradient(135deg, var(--bg-tertiary) 0%, var(--bg-card) 100%);
+  background-image: url('./assets/backgroundsoc.png');
+  /* background: linear-gradient(135deg, var(--bg-tertiary) 0%, var(--bg-card) 100%); */
   display: flex;
   align-items: center;
   justify-content: center;
