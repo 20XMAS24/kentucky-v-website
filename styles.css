@@ -34,6 +34,7 @@ body {
   line-height: 1.6;
   font-weight: 400;
   overflow-x: hidden;
+  position: relative;
 }
 
 img {
@@ -47,6 +48,94 @@ img {
   margin: 0 auto;
   padding: 0 max(20px, 3vw);
   width: 100%;
+  position: relative;
+  z-index: 2;
+}
+
+/* Section Decorative Patterns */
+.roleplay-section::before,
+.roleplay-section::after,
+.servers-section::before,
+.servers-section::after,
+.features-section::before,
+.features-section::after,
+.donation-section::before,
+.donation-section::after,
+.getting-started::before,
+.getting-started::after,
+.streamers-section::before,
+.streamers-section::after,
+.faq::before,
+.faq::after,
+.newsletter::before,
+.newsletter::after {
+  content: '';
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  opacity: 0.03;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Left side patterns */
+.roleplay-section::before,
+.servers-section::before,
+.features-section::before,
+.donation-section::before,
+.getting-started::before,
+.streamers-section::before,
+.faq::before,
+.newsletter::before {
+  left: -150px;
+  top: 10%;
+  background: radial-gradient(circle, rgba(230, 57, 70, 0.4) 0%, transparent 70%);
+  box-shadow: 0 0 100px rgba(230, 57, 70, 0.3);
+}
+
+/* Right side patterns */
+.roleplay-section::after,
+.servers-section::after,
+.features-section::after,
+.donation-section::after,
+.getting-started::after,
+.streamers-section::after,
+.faq::after,
+.newsletter::after {
+  right: -150px;
+  bottom: 10%;
+  background: radial-gradient(circle, rgba(230, 57, 70, 0.3) 0%, transparent 70%);
+  box-shadow: 0 0 120px rgba(230, 57, 70, 0.2);
+}
+
+/* Alternating pattern positions */
+.servers-section::before {
+  top: auto;
+  bottom: 20%;
+}
+
+.servers-section::after {
+  bottom: auto;
+  top: 20%;
+}
+
+.donation-section::before {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.donation-section::after {
+  bottom: auto;
+  top: 30%;
+}
+
+.streamers-section::before {
+  top: 15%;
+}
+
+.streamers-section::after {
+  bottom: 15%;
 }
 
 /* Typography */
@@ -210,7 +299,6 @@ h3 {
   max-width: 900px;
   padding: 0 max(20px, 5vw);
   width: 100%;
-  /*  */
 }
 
 .hero-logo {
@@ -222,7 +310,7 @@ h3 {
   max-width: clamp(100px, 15vw, 150px);
   width: 100%;
   height: auto;
-  filter: drop-shadow(0 8px 32px rgba(255, 0, 21, 0.4));
+  filter: drop-shadow(0 8px 32px rgba(230, 57, 70, 0.4));
   margin: 0 auto;
 }
 
@@ -400,6 +488,8 @@ h3 {
 .roleplay-section {
   padding: clamp(60px, 12vh, 120px) 0;
   background: var(--bg-secondary);
+  position: relative;
+  overflow: hidden;
 }
 
 .roleplay-content {
@@ -460,6 +550,8 @@ h3 {
 .servers-section {
   padding: clamp(60px, 12vh, 120px) 0;
   background: var(--bg-color);
+  position: relative;
+  overflow: hidden;
 }
 
 .servers-grid {
@@ -558,6 +650,8 @@ h3 {
 .features-section {
   padding: clamp(60px, 12vh, 120px) 0;
   background: var(--bg-secondary);
+  position: relative;
+  overflow: hidden;
 }
 
 /* Features Hero Image */
@@ -632,6 +726,8 @@ h3 {
 .donation-section {
   padding: clamp(60px, 12vh, 120px) 0;
   background: var(--bg-color);
+  position: relative;
+  overflow: hidden;
 }
 
 .pricing-grid {
@@ -780,6 +876,8 @@ h3 {
 .getting-started {
   padding: clamp(60px, 12vh, 120px) 0;
   background: var(--bg-secondary);
+  position: relative;
+  overflow: hidden;
 }
 
 .steps-container {
@@ -888,6 +986,8 @@ h3 {
 .streamers-section {
   padding: clamp(60px, 12vh, 120px) 0;
   background: var(--bg-color);
+  position: relative;
+  overflow: hidden;
 }
 
 .streamers-grid {
@@ -971,6 +1071,8 @@ h3 {
 .faq {
   background: var(--bg-secondary);
   padding: clamp(60px, 12vh, 120px) 0;
+  position: relative;
+  overflow: hidden;
 }
 
 .faq-items { max-width: 1000px; margin: 0 auto; }
@@ -1038,6 +1140,8 @@ h3 {
   background: var(--bg-color);
   padding: clamp(60px, 10vh, 100px) 0;
   text-align: center;
+  position: relative;
+  overflow: hidden;
 }
 
 .newsletter h2 {
@@ -1202,6 +1306,26 @@ h3 {
   .footer-links { justify-content: center; }
   .pricing-grid { grid-template-columns: 1fr; }
   .pricing-card.featured { transform: none; }
+  
+  /* Hide patterns on mobile */
+  .roleplay-section::before,
+  .roleplay-section::after,
+  .servers-section::before,
+  .servers-section::after,
+  .features-section::before,
+  .features-section::after,
+  .donation-section::before,
+  .donation-section::after,
+  .getting-started::before,
+  .getting-started::after,
+  .streamers-section::before,
+  .streamers-section::after,
+  .faq::before,
+  .faq::after,
+  .newsletter::before,
+  .newsletter::after {
+    display: none;
+  }
 }
 
 @media (max-width: 480px) {
