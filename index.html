@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kentucky V - GTA 5 RolePlay</title>
+    <title>Kentucky V - GTA 5 RolePlay Server</title>
+    <meta name="description" content="Kentucky V - Лучший GTA 5 RolePlay сервер. Создай свою историю в виртуальном мире!">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -15,26 +16,47 @@
             </div>
             <ul class="nav-links">
                 <li><a href="#home">Главная</a></li>
-                <li><a href="#about">О проекте</a></li>
-                <li><a href="#start">Начать</a></li>
+                <li><a href="#roleplay">Role Play</a></li>
+                <li><a href="#servers">Сервера</a></li>
+                <li><a href="#start">Как начать</a></li>
+                <li><a href="#streamers">Стримеры</a></li>
                 <li><a href="#faq">FAQ</a></li>
             </ul>
+            <button class="btn btn-primary btn-nav" onclick="window.location.href='#start'">Играть</button>
         </div>
     </nav>
 
     <!-- Hero Section -->
     <section id="home" class="hero">
+        <div class="hero-overlay"></div>
         <div class="hero-content">
             <div class="hero-logo">
                 <img src="assets/logo.png" alt="Kentucky V Logo" class="logo-image">
             </div>
-            <h1>Kentucky V</h1>
-            <p class="subtitle">Создай свою историю в виртуальном мире</p>
+            <h1 class="glitch" data-text="KENTUCKY V">KENTUCKY V</h1>
+            <p class="subtitle">ROLE PLAY</p>
+            <p class="hero-description">Создай свою историю в виртуальном мире</p>
+            
+            <!-- Online Players Counter -->
+            <div class="online-counter">
+                <div class="counter-box">
+                    <div class="counter-label">Сейчас играют</div>
+                    <div class="counter-number" id="onlinePlayers">1,247</div>
+                </div>
+            </div>
+            
             <div class="hero-buttons">
-                <button class="btn btn-primary" onclick="document.getElementById('start').scrollIntoView({ behavior: 'smooth' })">Играть</button>
-                <button class="btn btn-secondary" onclick="document.getElementById('faq').scrollIntoView({ behavior: 'smooth' })">Подробнее</button>
+                <button class="btn btn-primary btn-large" onclick="document.getElementById('start').scrollIntoView({ behavior: 'smooth' })">
+                    Скачать лаунчер
+                </button>
+                <button class="btn btn-secondary btn-large" onclick="document.getElementById('roleplay').scrollIntoView({ behavior: 'smooth' })">
+                    Узнать больше
+                </button>
             </div>
         </div>
+        
+        <!-- Animated Background -->
+        <div class="hero-particles"></div>
         <div class="hero-background">
             <svg class="wave" viewBox="0 0 1200 120" preserveAspectRatio="none">
                 <path d="M0,50 Q300,0 600,50 T1200,50 L1200,120 L0,120 Z" fill="#ff4444" opacity="0.3"></path>
@@ -44,33 +66,128 @@
         </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="about">
+    <!-- RolePlay Section -->
+    <section id="roleplay" class="roleplay-section">
         <div class="container">
-            <h2>О Kentucky V</h2>
-            <p class="about-text">
-                Kentucky V — это уникальная возможность погрузиться в виртуальную вселенную и играть выбранной ролью, соблюдая правила, аналогичные реальной жизни.
-            </p>
-            <div class="features">
-                <div class="feature">
+            <div class="section-header">
+                <span class="section-label">// Downtown</span>
+                <h2>Что такое <span class="highlight">RolePlay</span>?</h2>
+            </div>
+            
+            <div class="roleplay-content">
+                <div class="roleplay-text">
+                    <p class="lead-text">
+                        <strong>RolePlay</strong> — это игровой режим, который базируется на игре по ролям. 
+                        Простыми словами, игроки сервера пытаются имитировать в игре реальную жизнь, 
+                        отыгрывая свою выбранную роль и становясь частью игрового мира и общества.
+                    </p>
+                    <p>
+                        Играй <span class="text-highlight">бандитом</span> или <span class="text-highlight">полицейским</span>, 
+                        <span class="text-highlight">чиновником</span> или <span class="text-highlight">медиком</span>, 
+                        <span class="text-highlight">мафией</span> или <span class="text-highlight">сотрудником ФБР</span>. 
+                        Прочувствуй атмосферу удивительного мира ролевой игры с реалистичным миром на Kentucky V!
+                    </p>
+                </div>
+                
+                <div class="roleplay-image">
+                    <div class="image-placeholder">
+                        <span class="placeholder-text">🎮 GAMEPLAY SCREENSHOT</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Servers Section -->
+    <section id="servers" class="servers-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">// Game Servers</span>
+                <h2>Наши <span class="highlight">Сервера</span></h2>
+                <p class="section-subtitle">Тебя ждут игроки со всего мира! Нажми на выбранный сервер, чтобы скопировать его IP-адрес.</p>
+            </div>
+            
+            <div class="servers-grid">
+                <div class="server-card" onclick="copyIP('play1.kentuckyv.com')">
+                    <div class="server-status online"></div>
+                    <div class="server-info">
+                        <h3 class="server-name">Kentucky V - Server #1</h3>
+                        <p class="server-ip">play1.kentuckyv.com</p>
+                        <div class="server-stats">
+                            <span class="stat"><i class="icon">👥</i> 456 / 500</span>
+                            <span class="stat"><i class="icon">📡</i> 32ms</span>
+                        </div>
+                    </div>
+                    <button class="btn btn-small btn-copy">Скопировать IP</button>
+                </div>
+                
+                <div class="server-card" onclick="copyIP('play2.kentuckyv.com')">
+                    <div class="server-status online"></div>
+                    <div class="server-info">
+                        <h3 class="server-name">Kentucky V - Server #2</h3>
+                        <p class="server-ip">play2.kentuckyv.com</p>
+                        <div class="server-stats">
+                            <span class="stat"><i class="icon">👥</i> 391 / 500</span>
+                            <span class="stat"><i class="icon">📡</i> 28ms</span>
+                        </div>
+                    </div>
+                    <button class="btn btn-small btn-copy">Скопировать IP</button>
+                </div>
+                
+                <div class="server-card" onclick="copyIP('play3.kentuckyv.com')">
+                    <div class="server-status online"></div>
+                    <div class="server-info">
+                        <h3 class="server-name">Kentucky V - Server #3</h3>
+                        <p class="server-ip">play3.kentuckyv.com</p>
+                        <div class="server-stats">
+                            <span class="stat"><i class="icon">👥</i> 400 / 500</span>
+                            <span class="stat"><i class="icon">📡</i> 35ms</span>
+                        </div>
+                    </div>
+                    <button class="btn btn-small btn-copy">Скопировать IP</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section">
+        <div class="container">
+            <div class="features-grid">
+                <div class="feature-card">
                     <div class="feature-icon">👔</div>
                     <h3>Разнообразные профессии</h3>
-                    <p>Станьте политиком, бандитом, бизнесменом, таксистом или полицейским</p>
+                    <p>Станьте политиком, бандитом, бизнесменом, таксистом или полицейским. Выбор за вами!</p>
                 </div>
-                <div class="feature">
+                
+                <div class="feature-card">
                     <div class="feature-icon">🌍</div>
-                    <h3>Виртуальный мир</h3>
-                    <p>Огромный мир, полный возможностей и приключений</p>
+                    <h3>Огромный мир</h3>
+                    <p>Исследуйте виртуальную вселенную, полную возможностей и приключений</p>
                 </div>
-                <div class="feature">
+                
+                <div class="feature-card">
                     <div class="feature-icon">👥</div>
-                    <h3>Мультиплеер</h3>
-                    <p>Взаимодействуйте с другими игроками в реальном времени</p>
+                    <h3>Тысячи игроков</h3>
+                    <p>Взаимодействуйте с другими игроками в режиме реального времени</p>
                 </div>
-                <div class="feature">
-                    <div class="feature-icon">🎮</div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
                     <h3>События и ивенты</h3>
-                    <p>Регулярные обновления и сезонные события</p>
+                    <p>Регулярные обновления и сезонные события для игроков</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">💼</div>
+                    <h3>Создай бизнес</h3>
+                    <p>Открой свой бизнес, зарабатывай деньги и развивайся</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🚗</div>
+                    <h3>Авто и недвижимость</h3>
+                    <p>Покупайте машины, дома, квартиры и другую недвижимость</p>
                 </div>
             </div>
         </div>
@@ -79,28 +196,111 @@
     <!-- Getting Started Section -->
     <section id="start" class="getting-started">
         <div class="container">
-            <h2>Как начать играть?</h2>
-            <p class="section-subtitle">Всего два простых шага и ты готов к игре!</p>
-            <div class="steps">
-                <div class="step">
+            <div class="section-header">
+                <h2>Как <span class="highlight">начать играть</span>?</h2>
+                <p class="section-subtitle">Всего три простых шага и ты готов к игре!</p>
+            </div>
+            
+            <div class="steps-container">
+                <div class="step-card">
                     <div class="step-number">1</div>
-                    <h3>Купи Grand Theft Auto V Legacy</h3>
-                    <p>Если у вас еще нет лицензионной версии игры, приобретите её в официальном магазине</p>
+                    <div class="step-content">
+                        <h3>Купи Grand Theft Auto V Legacy</h3>
+                        <p>Если у вас еще нет лицензионной версии игры</p>
+                        <div class="platform-links">
+                            <a href="#" class="platform-btn">Steam</a>
+                            <a href="#" class="platform-btn">Epic Games</a>
+                            <a href="#" class="platform-btn">Rockstar</a>
+                        </div>
+                    </div>
                 </div>
-                <div class="step">
+                
+                <div class="step-card">
                     <div class="step-number">2</div>
-                    <h3>Скачай Kentucky Launcher</h3>
-                    <p>Самый быстрый способ начать играть. Лаунчер безопасен и исправляет ошибки игры</p>
+                    <div class="step-content">
+                        <h3>Скачай Kentucky Launcher</h3>
+                        <p>Самый быстрый способ начать играть. Лаунчер безопасен и исправляет ошибки игры</p>
+                        <button class="btn btn-primary btn-download">
+                            <span class="download-icon">⬇</span> Скачать лаунчер
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Выбери сервер и начни играть</h3>
+                        <p>Запусти лаунчер, выбери сервер из списка и подключайся к игре</p>
+                        <button class="btn btn-secondary" onclick="document.getElementById('servers').scrollIntoView({ behavior: 'smooth' })">
+                            Посмотреть сервера
+                        </button>
+                    </div>
                 </div>
             </div>
-            <button class="btn btn-primary btn-large">Скачать Лаунчер</button>
+        </div>
+    </section>
+
+    <!-- Streamers Section -->
+    <section id="streamers" class="streamers-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">// Live Streams</span>
+                <h2>Играй и <span class="highlight">смотри</span></h2>
+                <p class="section-subtitle">
+                    Смотри, поддерживай и участвуй в стримах самых популярных стримеров, которые играют на наших серверах.
+                    Играй вместе с любимыми блогерами и стримерами в Kentucky V!
+                </p>
+            </div>
+            
+            <div class="streamers-grid">
+                <div class="streamer-card">
+                    <div class="streamer-preview">
+                        <span class="live-badge">🔴 LIVE</span>
+                        <div class="preview-placeholder">STREAM PREVIEW</div>
+                    </div>
+                    <div class="streamer-info">
+                        <h4 class="streamer-name">Streamer Name</h4>
+                        <p class="streamer-viewers">1,234 зрителей</p>
+                    </div>
+                </div>
+                
+                <div class="streamer-card">
+                    <div class="streamer-preview">
+                        <span class="live-badge">🔴 LIVE</span>
+                        <div class="preview-placeholder">STREAM PREVIEW</div>
+                    </div>
+                    <div class="streamer-info">
+                        <h4 class="streamer-name">Streamer Name</h4>
+                        <p class="streamer-viewers">892 зрителей</p>
+                    </div>
+                </div>
+                
+                <div class="streamer-card">
+                    <div class="streamer-preview">
+                        <span class="live-badge">🔴 LIVE</span>
+                        <div class="preview-placeholder">STREAM PREVIEW</div>
+                    </div>
+                    <div class="streamer-info">
+                        <h4 class="streamer-name">Streamer Name</h4>
+                        <p class="streamer-viewers">567 зрителей</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="streamers-cta">
+                <p>Наблюдай и поддерживай стримеров, играющих на наших серверах. Или даже играй вместе с ними.</p>
+                <button class="btn btn-primary">Стать медиа-партнером</button>
+            </div>
         </div>
     </section>
 
     <!-- FAQ Section -->
     <section id="faq" class="faq">
         <div class="container">
-            <h2>Часто задаваемые вопросы</h2>
+            <div class="section-header">
+                <h2>Часто задаваемые <span class="highlight">вопросы</span></h2>
+            </div>
+            
             <div class="faq-items">
                 <div class="faq-item">
                     <div class="faq-question" onclick="toggleFaq(this)">
@@ -111,6 +311,7 @@
                         <p>Это уникальный проект на базе GTA V, позволяющий тысячам игроков взаимодействовать друг с другом в реальном времени. Вы создаёте персонажа и живёте его жизнью в виртуальном мире.</p>
                     </div>
                 </div>
+                
                 <div class="faq-item">
                     <div class="faq-question" onclick="toggleFaq(this)">
                         <h3>Что такое Role Play?</h3>
@@ -120,6 +321,7 @@
                         <p>Это игровой режим, где участники создают персонажей и сценарии, а затем действуют согласно своим ролям в рамках игровых процессов. Вы полностью контролируете развитие истории вашего персонажа.</p>
                     </div>
                 </div>
+                
                 <div class="faq-item">
                     <div class="faq-question" onclick="toggleFaq(this)">
                         <h3>Как начать играть на Kentucky V?</h3>
@@ -129,6 +331,7 @@
                         <p>Для начала необходимо скачать лицензионную GTA V Legacy и установить Kentucky Launcher. После этого вы сможете подключиться к серверам.</p>
                     </div>
                 </div>
+                
                 <div class="faq-item">
                     <div class="faq-question" onclick="toggleFaq(this)">
                         <h3>Что такое Kentucky Launcher?</h3>
@@ -138,6 +341,7 @@
                         <p>Это приложение для подключения к серверам Kentucky V. Лаунчер безопасен, умеет исправлять ошибки игры и загружать необходимые файлы автоматически.</p>
                     </div>
                 </div>
+                
                 <div class="faq-item">
                     <div class="faq-question" onclick="toggleFaq(this)">
                         <h3>Чем заняться на сервере?</h3>
@@ -147,6 +351,7 @@
                         <p>Помимо большого выбора профессий и взаимодействия с игроками, у нас доступны регулярные обновления и сезонные ивенты. Вы можете заработать деньги, завести бизнес, участвовать в событиях.</p>
                     </div>
                 </div>
+                
                 <div class="faq-item">
                     <div class="faq-question" onclick="toggleFaq(this)">
                         <h3>Где найти правила серверов?</h3>
@@ -165,7 +370,7 @@
         <div class="container">
             <h2>Двигайся с нами</h2>
             <p>Узнавай первым об акциях и новостях</p>
-            <form class="newsletter-form">
+            <form class="newsletter-form" onsubmit="return handleNewsletter(event)">
                 <input type="email" placeholder="Введите ваш email" required>
                 <button type="submit" class="btn btn-primary">Подписаться</button>
             </form>
@@ -175,11 +380,40 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2025 Kentucky V. Все права защищены.</p>
-            <div class="footer-links">
-                <a href="#">Условия использования</a>
-                <a href="#">Политика конфиденциальности</a>
-                <a href="#">Контакты</a>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Kentucky V</h4>
+                    <p>Лучший GTA 5 RolePlay сервер.<br>Создай свою историю в виртуальном мире!</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Навигация</h4>
+                    <ul>
+                        <li><a href="#home">Главная</a></li>
+                        <li><a href="#roleplay">RolePlay</a></li>
+                        <li><a href="#servers">Сервера</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Социальные сети</h4>
+                    <div class="social-links">
+                        <a href="#" class="social-link">Discord</a>
+                        <a href="#" class="social-link">VK</a>
+                        <a href="#" class="social-link">Telegram</a>
+                        <a href="#" class="social-link">YouTube</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Kentucky V. Все права защищены.</p>
+                <div class="footer-links">
+                    <a href="#">Условия использования</a>
+                    <a href="#">Политика конфиденциальности</a>
+                    <a href="#">Контакты</a>
+                </div>
             </div>
         </div>
     </footer>
