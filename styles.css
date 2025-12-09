@@ -52,7 +52,7 @@ body {
   padding: 0 22px;
 }
 
-/* Typography - Apple style */
+/* Typography */
 h1 {
   font-size: 80px;
   line-height: 1.05;
@@ -82,7 +82,7 @@ h3 {
   color: var(--text-secondary);
 }
 
-/* Navigation - Apple style */
+/* Navigation */
 .navbar {
   background: rgba(29, 29, 31, 0.92);
   backdrop-filter: saturate(180%) blur(20px);
@@ -150,7 +150,7 @@ h3 {
   font-weight: 400;
 }
 
-/* Hero Section - Apple style */
+/* Hero Section */
 .hero {
   min-height: 100vh;
   display: flex;
@@ -171,6 +171,25 @@ h3 {
   height: 100%;
   background: radial-gradient(circle at 50% 30%, rgba(255, 107, 107, 0.08) 0%, transparent 60%);
   z-index: 1;
+}
+
+/* Hero Background Media */
+.hero-bg-media {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.hero-bg-gif {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.15;
+  filter: blur(2px);
 }
 
 .hero-content {
@@ -230,7 +249,7 @@ h3 {
   animation: fadeInUp 1s ease 0.4s both;
 }
 
-/* Online Counter - Apple style */
+/* Online Counter */
 .online-counter {
   margin: 40px 0;
   display: flex;
@@ -278,7 +297,7 @@ h3 {
   animation: fadeInUp 1s ease 0.6s both;
 }
 
-/* Buttons - Apple style */
+/* Buttons */
 .btn {
   padding: 12px 24px;
   border: none;
@@ -322,7 +341,7 @@ h3 {
   font-size: 14px;
 }
 
-/* Section Headers - Apple style */
+/* Section Headers */
 .section-header {
   text-align: center;
   margin-bottom: 60px;
@@ -356,7 +375,7 @@ h3 {
   letter-spacing: 0.011em;
 }
 
-/* RolePlay Section - Apple style */
+/* RolePlay Section */
 .roleplay-section {
   padding: 100px 0;
   background: var(--bg-secondary);
@@ -368,7 +387,7 @@ h3 {
   gap: 60px;
   align-items: center;
   max-width: 1280px;
-  margin: 0 auto;
+  margin: 0 auto 60px;
 }
 
 .lead-text {
@@ -392,33 +411,94 @@ h3 {
   font-weight: 400;
 }
 
-.roleplay-image .image-placeholder {
-  background: var(--bg-card);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+/* RolePlay GIF */
+.rp-gif {
+  width: 100%;
   border-radius: 18px;
-  padding: 80px 40px;
-  text-align: center;
-  min-height: 400px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  border: 1px solid rgba(255, 255, 255, 0.08);
   transition: var(--transition);
 }
 
-.roleplay-image .image-placeholder:hover {
-  border-color: rgba(255, 107, 107, 0.2);
+.rp-gif:hover {
+  border-color: rgba(255, 107, 107, 0.3);
+  transform: scale(1.02);
 }
 
-.placeholder-text {
+/* Screenshots Gallery */
+.screenshots-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 24px;
+  margin-top: 40px;
+}
+
+.screenshot-item {
+  position: relative;
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+.screenshot-item:hover {
+  border-color: rgba(255, 107, 107, 0.3);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-card);
+}
+
+.screenshot-item img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  display: block;
+  transition: var(--transition);
+}
+
+.screenshot-item:hover img {
+  transform: scale(1.05);
+}
+
+.screenshot-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 20px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+  opacity: 0;
+  transition: var(--transition);
+}
+
+.screenshot-item:hover .screenshot-overlay {
+  opacity: 1;
+}
+
+.screenshot-overlay span {
+  color: #fff;
   font-size: 17px;
-  color: var(--text-tertiary);
+  font-weight: 600;
   letter-spacing: -0.022em;
 }
 
-/* Servers Section - Apple style */
+/* Servers Section */
 .servers-section {
   padding: 100px 0;
   background: var(--bg-color);
+}
+
+/* Server GIF Container */
+.server-gif-container {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.server-gif {
+  max-width: 600px;
+  width: 100%;
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  opacity: 0.8;
 }
 
 .servers-grid {
@@ -506,7 +586,7 @@ h3 {
   border-color: var(--primary-color);
 }
 
-/* Features Section - Apple style */
+/* Features Section */
 .features-section {
   padding: 100px 0;
   background: var(--bg-secondary);
@@ -551,9 +631,27 @@ h3 {
   font-size: 15px;
   line-height: 1.52;
   letter-spacing: -0.01em;
+  margin-bottom: 16px;
 }
 
-/* Getting Started Section - Apple style */
+/* Feature Media */
+.feature-gif,
+.feature-img {
+  width: 100%;
+  max-width: 200px;
+  border-radius: 12px;
+  margin-top: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: var(--transition);
+}
+
+.feature-card:hover .feature-gif,
+.feature-card:hover .feature-img {
+  border-color: rgba(255, 107, 107, 0.2);
+  transform: scale(1.05);
+}
+
+/* Getting Started Section */
 .getting-started {
   padding: 100px 0;
   background: var(--bg-color);
@@ -616,6 +714,7 @@ h3 {
   display: flex;
   gap: 12px;
   flex-wrap: wrap;
+  margin-bottom: 16px;
 }
 
 .platform-btn {
@@ -640,16 +739,40 @@ h3 {
   align-items: center;
   justify-content: center;
   gap: 8px;
+  margin-bottom: 16px;
 }
 
 .download-icon {
   font-size: 20px;
 }
 
-/* Streamers Section - Apple style */
+/* Step GIF */
+.step-gif {
+  width: 100%;
+  max-width: 300px;
+  border-radius: 12px;
+  margin-top: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Streamers Section */
 .streamers-section {
   padding: 100px 0;
   background: var(--bg-secondary);
+}
+
+/* Streaming GIF */
+.streaming-gif-container {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.streaming-gif {
+  max-width: 400px;
+  width: 100%;
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  opacity: 0.8;
 }
 
 .streamers-grid {
@@ -681,12 +804,13 @@ h3 {
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
 }
 
-.preview-placeholder {
-  color: var(--text-tertiary);
-  font-size: 14px;
-  letter-spacing: -0.01em;
+.stream-preview {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .live-badge {
@@ -701,6 +825,7 @@ h3 {
   font-weight: 600;
   letter-spacing: 0.06em;
   text-transform: uppercase;
+  z-index: 1;
 }
 
 .streamer-info {
@@ -733,7 +858,7 @@ h3 {
   letter-spacing: -0.022em;
 }
 
-/* FAQ Section - Apple style */
+/* FAQ Section */
 .faq {
   background: var(--bg-color);
   padding: 100px 0;
@@ -805,7 +930,7 @@ h3 {
   letter-spacing: -0.022em;
 }
 
-/* Newsletter Section - Apple style */
+/* Newsletter Section */
 .newsletter {
   background: var(--bg-secondary);
   padding: 80px 0;
@@ -869,7 +994,7 @@ h3 {
   background: var(--primary-hover);
 }
 
-/* Footer - Apple style */
+/* Footer */
 .footer {
   background: var(--bg-color);
   border-top: 1px solid rgba(255, 255, 255, 0.08);
@@ -982,7 +1107,7 @@ h3 {
   display: none;
 }
 
-/* Responsive Design - Apple style */
+/* Responsive Design */
 @media (max-width: 1068px) {
   h1 { font-size: 56px; }
   h2 { font-size: 40px; }
@@ -1001,6 +1126,10 @@ h3 {
   
   .step-card {
     text-align: center;
+  }
+  
+  .screenshots-gallery {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -1049,6 +1178,11 @@ h3 {
     flex-direction: column;
     text-align: center;
   }
+  
+  .server-gif,
+  .streaming-gif {
+    max-width: 100%;
+  }
 }
 
 @media (max-width: 480px) {
@@ -1067,5 +1201,9 @@ h3 {
   
   .hero-buttons .btn {
     width: 100%;
+  }
+  
+  .screenshots-gallery {
+    gap: 16px;
   }
 }
