@@ -24,7 +24,6 @@ function toggleFaq(element) {
 // Copy server IP to clipboard
 function copyIP(ip) {
   navigator.clipboard.writeText(ip).then(() => {
-    // Show notification
     showNotification(`IP адрес скопирован: ${ip}`);
   }).catch(err => {
     console.error('Ошибка копирования:', err);
@@ -59,79 +58,36 @@ function showNotification(message, type = 'success') {
   }, 3000);
 }
 
-// Animate online counter
-function animateCounter() {
-  const counter = document.getElementById('onlinePlayers');
-  if (!counter) return;
+// Donation with YooMoney
+function donate(amount) {
+  // Здесь вставьте ваш YooMoney receiver ID
+  const receiverID = '410011234567890'; // ЗАМЕНИТЕ НА ВАШ ID!
   
-  const target = Math.floor(Math.random() * 500) + 1000; // Random between 1000-1500
-  const duration = 2000;
-  const start = 0;
-  const increment = target / (duration / 16);
-  let current = start;
+  // Формируем URL для YooMoney
+  const yoomoneyUrl = `https://yoomoney.ru/quickpay/confirm?` +
+    `receiver=${receiverID}` +
+    `&quickpay-form=shop` +
+    `&targets=Поддержка%20сервера%20Kentucky%20V` +
+    `&paymentType=SB` +
+    `&sum=${amount}` +
+    `&label=kentuckyv_donate_${Date.now()}`;
   
-  const timer = setInterval(() => {
-    current += increment;
-    if (current >= target) {
-      counter.textContent = target.toLocaleString('ru-RU');
-      clearInterval(timer);
-    } else {
-      counter.textContent = Math.floor(current).toLocaleString('ru-RU');
-    }
-  }, 16);
+  // Открываем страницу оплаты
+  window.open(yoomoneyUrl, '_blank');
+  
+  showNotification(`Переход к оплате ${amount}₽ через YooMoney...`);
 }
 
-// Newsletter form submission
+// Newsletter form handler
 function handleNewsletter(event) {
   event.preventDefault();
-  const form = event.target;
-  const email = form.querySelector('input[type="email"]').value;
-  
-  if (email) {
-    showNotification(`Спасибо за подписку! Письмо отправлено на ${email}`);
-    form.reset();
-  }
-  
+  const email = event.target.querySelector('input[type="email"]').value;
+  showNotification(`Спасибо за подписку! Email: ${email}`);
+  event.target.reset();
   return false;
 }
 
-// Smooth scroll for navigation
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function(e) {
-    e.preventDefault();
-    const target = document.querySelector(this.getAttribute('href'));
-    if (target) {
-      target.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start'
-      });
-    }
-  });
-});
-
-// Navbar scroll effect
-let lastScroll = 0;
-window.addEventListener('scroll', function() {
-  const navbar = document.querySelector('.navbar');
-  const currentScroll = window.scrollY;
-  
-  if (currentScroll > 100) {
-    navbar.style.boxShadow = '0 5px 30px rgba(255, 68, 68, 0.3)';
-    navbar.style.background = 'rgba(10, 10, 10, 0.98)';
-  } else {
-    navbar.style.boxShadow = 'none';
-    navbar.style.background = 'rgba(10, 10, 10, 0.95)';
-  }
-  
-  lastScroll = currentScroll;
-});
-
-// Intersection Observer for animations
-const observerOptions = {
-  threshold: 0.1,
-  rootMargin: '0px 0px -100px 0px'
-};
-
+// Intersection Observer for scroll animations
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
@@ -139,87 +95,40 @@ const observer = new IntersectionObserver((entries) => {
       observer.unobserve(entry.target);
     }
   });
-}, observerOptions);
+}, {
+  threshold: 0.1
+});
 
 // Observe elements
 document.addEventListener('DOMContentLoaded', () => {
-  // Animate counter on load
-  animateCounter();
-  
-  // Update counter every 30 seconds
-  setInterval(() => {
-    animateCounter();
-  }, 30000);
-  
   // Observe sections for animations
-  document.querySelectorAll('.feature-card, .server-card, .step-card, .streamer-card').forEach(el => {
+  document.querySelectorAll('.feature-card, .server-card, .step-card, .streamer-card, .pricing-card').forEach(el => {
     el.style.opacity = '0';
     observer.observe(el);
   });
   
-  console.log('%c Kentucky V Website Loaded Successfully! ', 'background: #ff4444; color: #fff; font-size: 16px; padding: 10px;');
-  console.log('%c Ready to play? Visit our servers! ', 'background: #00ff00; color: #000; font-size: 14px; padding: 5px;');
+  // Smooth scroll for navigation links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  });
 });
 
-// Add CSS animations dynamically
+// Add animations
 const style = document.createElement('style');
 style.textContent = `
   @keyframes slideIn {
-    from {
-      transform: translateX(400px);
-      opacity: 0;
-    }
-    to {
-      transform: translateX(0);
-      opacity: 1;
-    }
+    from { transform: translateX(100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
   }
-  
   @keyframes slideOut {
-    from {
-      transform: translateX(0);
-      opacity: 1;
-    }
-    to {
-      transform: translateX(400px);
-      opacity: 0;
-    }
+    from { transform: translateX(0); opacity: 1; }
+    to { transform: translateX(100%); opacity: 0; }
   }
 `;
 document.head.appendChild(style);
-
-// Prevent context menu on images (optional security)
-document.addEventListener('contextmenu', function(e) {
-  if (e.target.tagName === 'IMG') {
-    e.preventDefault();
-  }
-});
-
-// Easter egg: Konami code
-let konamiCode = [];
-const konamiPattern = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
-
-document.addEventListener('keydown', function(e) {
-  konamiCode.push(e.key);
-  konamiCode = konamiCode.slice(-10);
-  
-  if (konamiCode.join(',') === konamiPattern.join(',')) {
-    document.body.style.animation = 'rainbow 2s linear infinite';
-    showNotification('🎉 Секретный код активирован! 🎉');
-    setTimeout(() => {
-      document.body.style.animation = '';
-    }, 2000);
-  }
-});
-
-// Random server stats update
-setInterval(() => {
-  document.querySelectorAll('.server-stats .stat').forEach((stat, index) => {
-    if (index === 0) { // Players count
-      const current = parseInt(stat.textContent.match(/\d+/)[0]);
-      const change = Math.floor(Math.random() * 10) - 5;
-      const newValue = Math.max(0, Math.min(500, current + change));
-      stat.innerHTML = `<i class="icon">👥</i> ${newValue} / 500`;
-    }
-  });
-}, 10000); // Update every 10 seconds

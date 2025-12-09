@@ -218,7 +218,7 @@ h3 {
 }
 
 .logo-image {
-  max-width: clamp(100px, 15vw, 150px);
+  max-width: clamp(100px, 15vw, 200px);
   width: 100%;
   height: auto;
   filter: drop-shadow(0 8px 32px rgba(230, 57, 70, 0.4));
@@ -627,10 +627,155 @@ h3 {
   line-height: 1.7;
 }
 
+/* Donation Section */
+.donation-section {
+  padding: clamp(60px, 12vh, 120px) 0;
+  background: var(--bg-color);
+}
+
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
+  gap: clamp(25px, 4vw, 40px);
+  margin-bottom: clamp(40px, 6vh, 60px);
+}
+
+.pricing-card {
+  background: var(--bg-card);
+  border: 3px solid var(--border-color);
+  border-radius: 16px;
+  padding: clamp(35px, 5vh, 50px) clamp(30px, 4vw, 40px);
+  text-align: center;
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+.pricing-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary-color), var(--primary-dark));
+  transform: scaleX(0);
+  transition: transform 0.3s;
+}
+
+.pricing-card:hover::before { transform: scaleX(1); }
+.pricing-card:hover {
+  border-color: var(--primary-color);
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: var(--shadow-glow);
+}
+
+.pricing-card.featured {
+  border-color: var(--primary-color);
+  border-width: 4px;
+  transform: scale(1.05);
+}
+
+.pricing-card.featured::before {
+  transform: scaleX(1);
+}
+
+.plan-badge {
+  display: inline-block;
+  padding: clamp(6px, 1vh, 8px) clamp(16px, 2.5vw, 24px);
+  background: var(--border-color);
+  color: var(--text-color);
+  border-radius: 20px;
+  font-size: clamp(11px, 1.2vw, 13px);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: clamp(20px, 3vh, 30px);
+}
+
+.plan-badge.popular {
+  background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+  box-shadow: 0 4px 16px rgba(230, 57, 70, 0.5);
+}
+
+.plan-name {
+  font-size: clamp(24px, 3vw, 32px);
+  font-weight: 700;
+  margin-bottom: clamp(15px, 2.5vh, 25px);
+  color: var(--text-color);
+  text-transform: uppercase;
+}
+
+.plan-price {
+  margin-bottom: clamp(30px, 4vh, 40px);
+}
+
+.price-amount {
+  font-size: clamp(48px, 7vw, 64px);
+  font-weight: 700;
+  color: var(--primary-color);
+  line-height: 1;
+}
+
+.price-currency {
+  font-size: clamp(24px, 3vw, 32px);
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin-left: 5px;
+}
+
+.plan-features {
+  list-style: none;
+  margin-bottom: clamp(30px, 4vh, 40px);
+  text-align: left;
+}
+
+.plan-features li {
+  padding: clamp(10px, 1.5vh, 12px) 0;
+  font-size: clamp(14px, 1.6vw, 16px);
+  color: var(--text-secondary);
+  border-bottom: 1px solid var(--border-color);
+  line-height: 1.6;
+}
+
+.plan-features li:last-child {
+  border-bottom: none;
+}
+
+.btn-donate {
+  width: 100%;
+  padding: clamp(14px, 2vh, 18px) clamp(24px, 4vw, 36px);
+  font-size: clamp(14px, 1.6vw, 16px);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.donation-note {
+  text-align: center;
+  padding: clamp(25px, 4vh, 40px);
+  background: var(--bg-card);
+  border-radius: 12px;
+  border: 2px solid var(--border-color);
+}
+
+.donation-note p {
+  color: var(--text-secondary);
+  font-size: clamp(14px, 1.6vw, 16px);
+  margin: clamp(8px, 1.5vh, 12px) 0;
+  line-height: 1.7;
+}
+
+.donation-note strong {
+  color: var(--primary-color);
+  font-weight: 700;
+}
+
 /* Getting Started Section */
 .getting-started {
   padding: clamp(60px, 12vh, 120px) 0;
-  background: var(--bg-color);
+  background: var(--bg-secondary);
 }
 
 .steps-container {
@@ -738,7 +883,7 @@ h3 {
 /* Streamers Section */
 .streamers-section {
   padding: clamp(60px, 12vh, 120px) 0;
-  background: var(--bg-secondary);
+  background: var(--bg-color);
 }
 
 .streamers-grid {
@@ -767,8 +912,7 @@ h3 {
 .streamer-preview {
   position: relative;
   height: clamp(160px, 25vh, 220px);
-  background-image: url('./assets/backgroundsoc.png');
-  /* background: linear-gradient(135deg, var(--bg-tertiary) 0%, var(--bg-card) 100%); */
+  background: linear-gradient(135deg, var(--bg-tertiary) 0%, var(--bg-card) 100%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -821,7 +965,7 @@ h3 {
 
 /* FAQ Section */
 .faq {
-  background: var(--bg-color);
+  background: var(--bg-secondary);
   padding: clamp(60px, 12vh, 120px) 0;
 }
 
@@ -887,7 +1031,7 @@ h3 {
 
 /* Newsletter Section */
 .newsletter {
-  background: var(--bg-secondary);
+  background: var(--bg-color);
   padding: clamp(60px, 10vh, 100px) 0;
   text-align: center;
 }
@@ -944,7 +1088,7 @@ h3 {
 
 /* Footer */
 .footer {
-  background: var(--bg-color);
+  background: var(--bg-secondary);
   border-top: 2px solid var(--border-color);
   padding: clamp(50px, 8vh, 80px) 0 clamp(30px, 4vh, 40px);
   color: var(--text-secondary);
@@ -1035,7 +1179,7 @@ h3 {
 
 /* Mobile Responsive */
 @media (max-width: 768px) {
-  .nav-links li:nth-child(n+4) { display: none; }
+  .nav-links li:nth-child(n+5) { display: none; }
   .step-card {
     grid-template-columns: 1fr;
     text-align: center;
@@ -1052,6 +1196,8 @@ h3 {
     text-align: center;
   }
   .footer-links { justify-content: center; }
+  .pricing-grid { grid-template-columns: 1fr; }
+  .pricing-card.featured { transform: none; }
 }
 
 @media (max-width: 480px) {
