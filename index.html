@@ -29,9 +29,13 @@
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="hero-overlay"></div>
+        <!-- Background Video/GIF -->
+        <div class="hero-bg-media">
+            <img src="https://media.giphy.com/media/3oEjHWTuLfI3SMBZEk/giphy.gif" alt="GTA 5 Background" class="hero-bg-gif">
+        </div>
         <div class="hero-content">
             <div class="hero-logo">
-                <img src="assets/logo.png" alt="Kentucky V Logo" class="logo-image">
+                <img src="assets/logo.png" alt="Kentucky V Logo" class="logo-image" onerror="this.style.display='none'">
             </div>
             <h1 class="glitch" data-text="KENTUCKY V">KENTUCKY V</h1>
             <p class="subtitle">ROLE PLAY</p>
@@ -54,21 +58,11 @@
                 </button>
             </div>
         </div>
-        
-        <!-- Animated Background -->
-        <div class="hero-particles"></div>
-        <div class="hero-background">
-            <svg class="wave" viewBox="0 0 1200 120" preserveAspectRatio="none">
-                <path d="M0,50 Q300,0 600,50 T1200,50 L1200,120 L0,120 Z" fill="#ff4444" opacity="0.3"></path>
-                <path d="M0,60 Q300,20 600,60 T1200,60 L1200,120 L0,120 Z" fill="#ff4444" opacity="0.5"></path>
-                <path d="M0,70 Q300,40 600,70 T1200,70 L1200,120 L0,120 Z" fill="#ff4444" opacity="0.7"></path>
-            </svg>
-        </div>
     </section>
 
     <!-- RolePlay Section -->
     <section id="roleplay" class="roleplay-section">
-        <div class="container">
+        <div class="container-wide">
             <div class="section-header">
                 <span class="section-label">// Downtown</span>
                 <h2>Что такое <span class="highlight">RolePlay</span>?</h2>
@@ -90,8 +84,28 @@
                 </div>
                 
                 <div class="roleplay-image">
-                    <div class="image-placeholder">
-                        <span class="placeholder-text">🎮 GAMEPLAY SCREENSHOT</span>
+                    <img src="https://media.giphy.com/media/xUOwG43OJ9Mzf4exQQ/giphy.gif" alt="GTA 5 RP Gameplay" class="rp-gif">
+                </div>
+            </div>
+
+            <!-- GTA 5 Screenshots Gallery -->
+            <div class="screenshots-gallery">
+                <div class="screenshot-item">
+                    <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/271590/ss_13132be32e14f32890e02ce3aeafc9a40a0893c9.1920x1080.jpg" alt="GTA 5 Screenshot 1" loading="lazy">
+                    <div class="screenshot-overlay">
+                        <span>Полиция</span>
+                    </div>
+                </div>
+                <div class="screenshot-item">
+                    <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/271590/ss_76b8772c188ad4b01e8a7399a9cf0c6c5a0893c9.1920x1080.jpg" alt="GTA 5 Screenshot 2" loading="lazy">
+                    <div class="screenshot-overlay">
+                        <span>Городская жизнь</span>
+                    </div>
+                </div>
+                <div class="screenshot-item">
+                    <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/271590/ss_2464e9b68f4334ab6adef91ab79010697b8b85b3.1920x1080.jpg" alt="GTA 5 Screenshot 3" loading="lazy">
+                    <div class="screenshot-overlay">
+                        <span>Бизнес</span>
                     </div>
                 </div>
             </div>
@@ -107,6 +121,11 @@
                 <p class="section-subtitle">Тебя ждут игроки со всего мира! Нажми на выбранный сервер, чтобы скопировать его IP-адрес.</p>
             </div>
             
+            <!-- Animated GIF -->
+            <div class="server-gif-container">
+                <img src="https://media.giphy.com/media/l0HlNQ03J5JxX6lva/giphy.gif" alt="GTA 5 Car" class="server-gif">
+            </div>
+
             <div class="servers-grid">
                 <div class="server-card" onclick="copyIP('play1.kentuckyv.com')">
                     <div class="server-status online"></div>
@@ -152,42 +171,52 @@
 
     <!-- Features Section -->
     <section class="features-section">
-        <div class="container">
+        <div class="container-wide">
+            <div class="section-header">
+                <h2>Возможности <span class="highlight">Kentucky V</span></h2>
+            </div>
+
             <div class="features-grid">
                 <div class="feature-card">
                     <div class="feature-icon">👔</div>
                     <h3>Разнообразные профессии</h3>
                     <p>Станьте политиком, бандитом, бизнесменом, таксистом или полицейским. Выбор за вами!</p>
+                    <img src="https://media.giphy.com/media/l0Iy6nmyS5p7hIAxy/giphy.gif" alt="Police" class="feature-gif">
                 </div>
                 
                 <div class="feature-card">
                     <div class="feature-icon">🌍</div>
                     <h3>Огромный мир</h3>
                     <p>Исследуйте виртуальную вселенную, полную возможностей и приключений</p>
+                    <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/271590/ss_d15136b94a46de3b447dc029141ae309ccfd4024.600x338.jpg" alt="World" class="feature-img">
                 </div>
                 
                 <div class="feature-card">
                     <div class="feature-icon">👥</div>
                     <h3>Тысячи игроков</h3>
                     <p>Взаимодействуйте с другими игроками в режиме реального времени</p>
+                    <img src="https://media.giphy.com/media/xT0xeuOy2Fcl9vDGiA/giphy.gif" alt="Players" class="feature-gif">
                 </div>
                 
                 <div class="feature-card">
                     <div class="feature-icon">🎯</div>
                     <h3>События и ивенты</h3>
                     <p>Регулярные обновления и сезонные события для игроков</p>
+                    <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/271590/ss_8e3e3f5946ab5e31a93b7c8dea3f0c5c7cf57c0e.600x338.jpg" alt="Events" class="feature-img">
                 </div>
                 
                 <div class="feature-card">
                     <div class="feature-icon">💼</div>
                     <h3>Создай бизнес</h3>
                     <p>Открой свой бизнес, зарабатывай деньги и развивайся</p>
+                    <img src="https://media.giphy.com/media/67ThRZlYBvibtdF9JH/giphy.gif" alt="Business" class="feature-gif">
                 </div>
                 
                 <div class="feature-card">
                     <div class="feature-icon">🚗</div>
                     <h3>Авто и недвижимость</h3>
                     <p>Покупайте машины, дома, квартиры и другую недвижимость</p>
+                    <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/271590/ss_f1e60ae589c9e8a68facbf17e0d8b0106c2e0d24.600x338.jpg" alt="Cars" class="feature-img">
                 </div>
             </div>
         </div>
@@ -206,12 +235,13 @@
                     <div class="step-number">1</div>
                     <div class="step-content">
                         <h3>Купи Grand Theft Auto V Legacy</h3>
-                        <p>Если у вас еще нет лицензионной версии игры</p>
+                        <p>Если у вас еще нет лицензионной версии игры, приобретите её в официальном магазине</p>
                         <div class="platform-links">
-                            <a href="#" class="platform-btn">Steam</a>
-                            <a href="#" class="platform-btn">Epic Games</a>
-                            <a href="#" class="platform-btn">Rockstar</a>
+                            <a href="https://store.steampowered.com/app/271590/Grand_Theft_Auto_V/" class="platform-btn" target="_blank">Steam</a>
+                            <a href="https://store.epicgames.com/" class="platform-btn" target="_blank">Epic Games</a>
+                            <a href="https://store.rockstargames.com/" class="platform-btn" target="_blank">Rockstar</a>
                         </div>
+                        <img src="https://media.giphy.com/media/3o7btNhMBytxAM6YBa/giphy.gif" alt="GTA 5" class="step-gif">
                     </div>
                 </div>
                 
@@ -223,6 +253,7 @@
                         <button class="btn btn-primary btn-download">
                             <span class="download-icon">⬇</span> Скачать лаунчер
                         </button>
+                        <img src="https://media.giphy.com/media/xTiTnqUxyWbsAXq7Ju/giphy.gif" alt="Download" class="step-gif">
                     </div>
                 </div>
                 
@@ -234,6 +265,7 @@
                         <button class="btn btn-secondary" onclick="document.getElementById('servers').scrollIntoView({ behavior: 'smooth' })">
                             Посмотреть сервера
                         </button>
+                        <img src="https://media.giphy.com/media/l46CbZ7KWEhN1oci4/giphy.gif" alt="Play" class="step-gif">
                     </div>
                 </div>
             </div>
@@ -252,11 +284,16 @@
                 </p>
             </div>
             
+            <!-- Streaming GIF -->
+            <div class="streaming-gif-container">
+                <img src="https://media.giphy.com/media/3oKIPic2BnoVZkRla8/giphy.gif" alt="Streaming" class="streaming-gif">
+            </div>
+
             <div class="streamers-grid">
                 <div class="streamer-card">
                     <div class="streamer-preview">
                         <span class="live-badge">🔴 LIVE</span>
-                        <div class="preview-placeholder">STREAM PREVIEW</div>
+                        <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/271590/ss_5a23f8c3ab7127abf4a10edeedd2f8e9b1cf1c52.600x338.jpg" alt="Stream 1" class="stream-preview">
                     </div>
                     <div class="streamer-info">
                         <h4 class="streamer-name">Streamer Name</h4>
@@ -267,7 +304,7 @@
                 <div class="streamer-card">
                     <div class="streamer-preview">
                         <span class="live-badge">🔴 LIVE</span>
-                        <div class="preview-placeholder">STREAM PREVIEW</div>
+                        <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/271590/ss_6e6b8b6ddfff41f0dc773e22e7e60815c039537b.600x338.jpg" alt="Stream 2" class="stream-preview">
                     </div>
                     <div class="streamer-info">
                         <h4 class="streamer-name">Streamer Name</h4>
@@ -278,7 +315,7 @@
                 <div class="streamer-card">
                     <div class="streamer-preview">
                         <span class="live-badge">🔴 LIVE</span>
-                        <div class="preview-placeholder">STREAM PREVIEW</div>
+                        <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/271590/ss_ccbf3e8e8c8e3b581139f2b5d4d9e2e3d1e9e65d.600x338.jpg" alt="Stream 3" class="stream-preview">
                     </div>
                     <div class="streamer-info">
                         <h4 class="streamer-name">Streamer Name</h4>
