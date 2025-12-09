@@ -1,0 +1,29 @@
+{
+  "name": "kentucky-v-website",
+  "version": "1.0.0",
+  "description": "Official Kentucky V GTA 5 RolePlay Server Website",
+  "main": "index.html",
+  "scripts": {
+    "start": "open index.html",
+    "serve": "python -m http.server 8000"
+  },
+  "keywords": [
+    "Kentucky V",
+    "GTA 5",
+    "RolePlay",
+    "Server",
+    "RAGE MP"
+  ],
+  "author": "Kentucky V Team",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/20XMAS24/kentucky-v-website"
+  },
+  "homepage": "https://20XMAS24.github.io/kentucky-v-website/",
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "devDependencies": {},
+  "dependencies": {}
+}
